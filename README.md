@@ -36,3 +36,40 @@
 <p>As classes abstratas são úteis para definir uma estrutura comum para um conjunto de subclasses relacionadas, permitindo a definição de métodos que devem estar presentes em todas as subclasses, mas sem fornecer a implementação específica.</p>
 
 <p>Compreender o uso de classes abstratas é fundamental para projetar hierarquias de classes eficientes e reutilizáveis em Java.</p>
+
+
+<h3>Projeto UML:</h3>
+
+ <p align="center">
+  <img src="https://github.com/hildocosta/Classes_Abstratas/blob/main/imagem_01.png">
+</p>
+
+<h3>Exemplo:</h3>
+
+```
+Suponha que em um negócio relacionado a banco, apenas contas poupança e contas para empresas são permitidas.
+Não exite conta comum.
+
+Para garantir que contas comuns não possam ser istanciadas, basta acrescentarmos a palavra "abstract" na declaração da classe.
+
+public abstract class Account {
+(...)
+
+Notação UML: itálico
+```
+
+<h3>Questionamento</h3>
+
+* Se a classe Account não pode ser instanciada, por que simplesmente não criar somente SavingsAccount e BusinessAccount?
+
+* Resposta:
+* 
+    * Reuso
+    * Polimorfismo: a superclasse classe genérica nos permite tratar de forma fácil e uniforme todos os tipos e conta, inclusive com polimorfismo se for o caso (como fizemos nos últimos exercícios).
+
+      Por exemplo: você pode colocar todos os tipos de contas em uma mesma coleção.
+      
+* Demostração:
+
+   * Totalizar o saldo de todas as contas.
+   * Depositar 10.00 em todas as contas.
